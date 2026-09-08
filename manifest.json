@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "MCQ Automator",
+  "version": "3.0",
+  "description": "Autonomous MCQ solver for SRM ktretecurricula using Gemini.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://dld.srmist.edu.in/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
